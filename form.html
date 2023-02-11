@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    tr,th{
+        border:2px solid black;
+        padding:2px;
+    }
+   </style>
+</head>
+<body>
+    <h1>Generate your form here!!!</h1>
+    <form action="/"  name="forms">
+       
+        <label>Enter passcode:</label>
+        <input type="text" id="pass"/>
+  
+    <input type="button" value="dispone" id="b2"/>
+   <table id="res">
+
+   </table>
+    </form>
+
+<script>
+
+    const dispone=document.querySelector("#b2");
+
+    dispone.addEventListener('click',async(e)=>{
+ 
+        const pass= String(document.querySelector("#pass").value);
+
+        if(pass==""){
+            alert(" fields required");
+        }
+        else
+      {      
+          await  fetch('http://localhost:5500/dis/'+pass)
+            .then(async(e)=>{
+                return e.json();
+            })
+            .then(async(e1)=>{
+            
+                if(e1.length!=0){
+                    let temp='<tr><th>Hall name</th><th>name</th><th>Faculty mobile</th><th>dept</th><th>function</th><th>date</th><th>time</th></tr>';
+                    for(let d of e1){
+                        
+                        temp+='<tr><th>'+d.hall+'</th><th>'+d.name+'</th><th>'+d.mob+'</th><th>'+d.dept+'</th><th>'+d.func+'</th><th>'+d.date+'</th><th>'+d.time+'</th></tr>';
+            
+                    }
+                    document.getElementById("res").innerHTML=temp;  
+            }
+            else{
+                document.getElementById("res").innerHTML="No record found";
+            }
+        })
+        
+            .catch(async()=>{
+                console.log("ERROR");
+                result.innerHTML="ERROR";
+            })
+        
+    }
+    })
+   
+</script>
+
+    <script></script>
+   
+</body>
+</html>

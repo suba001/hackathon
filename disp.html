@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            padding: 20px;
+        }
+        tr,th ,td{
+            padding:20px;
+            border:1px solid black;
+            background-color: rgb(203, 248, 192);
+            color: blue;
+        
+        }
+        th{
+            color:black;
+        }
+        #one{
+            
+            height:700px;
+        }
+        #t{
+            background-color:rgb(235, 225, 225);
+        }
+        #mainNav{
+            height:100px;
+            background-color:rgb(10, 10, 10);
+        }
+        
+    </style>
+</head>
+<body>
+
+<div id="one">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <img src="klogo.png" width="80" height="60" class="d-inline-block align-top" alt=""></a>
+            <a class="navbar-brand" href="#page-top" style="margin-left:30px;color:white;">KONGU ENGINEERING COLLEGE</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="./index.html" style="color:white;">CC</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./index.html" style="color:white;">Auditorium</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./index.html"style="color:white;">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <br><br><br><br>
+    <br>
+    <marquee direction="right"><h1 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color:darkblue;">View booked halls</h1></marquee>
+    
+
+    <form action="/"  name="forms" style="margin-top:50px;"> 
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+              <div class="card"  id="t">
+                <div class="card-body"><br>
+                    <table class="table">
+                        <tr>
+                            <td><strong>Enter dept:</strong></td>
+                            <td><input type="text" class="passcode" id="dept"><br><br></td> 
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>Seminar hall</strong></td>
+                            <td><select class="form-control2" id="name">
+                                <option value="ramanujam">ramanujam</option>
+                                <option value="maharaja">maharaja</option>
+                                <option value="sarvepalli radhakrishnan">sarvepalli radhakrishnan</option>
+                                <option value="jawaharlal nehru">jawaharlal nehru</option>
+                                <option value="homie j baba">homie j baba</option>
+                                <option value="sir cv raman">sir cv raman</option>
+                                <option value="mba seminar hall">mba seminar hall</option>
+                                <option value="kalingarayan">kalingarayan</option>
+                                <option value="convention center">convention center</option>
+                            </select></td>
+                        </tr>
+                    </table>
+                    
+                  <!-- <img src="./ccbook.jfif" width="100%"><br><br> -->
+                  <br><br><center><a href="#" class="btn btn-primary" id="b2">DISPLAY</a></center>
+                  <br>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-5">
+              <div class="card"  id="t">
+                <div class="card-body">       
+                <center><img src="mo.jpg" width="200px" height="200px"></center>
+            <br>
+            <center><a href="#" class="btn btn-primary" id="b1">DISPLAY ALL</a></center>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+          <br>
+          <br>
+          <table id="res" style="margin-left:250px;"></table>
+    </form>
+
+</div>
+   
+  
+
+    <script>
+       
+        const dispall=document.querySelector("#b1");
+        const dispone=document.querySelector("#b2");
+
+        dispall.addEventListener('click',async(e)=>{
+            
+        
+        await fetch('http://localhost:5500/get')
+        .then(async(e)=>{
+                
+                return e.json();
+            })
+        
+        .then(async(e1)=>{
+                
+                if(e1.length!=0){
+                let temp='<tr><th>Hall name</th><th>name</th><th>Faculty mobile</th><th>dept</th><th>function</th><th>date</th><th>time</th></tr>';
+                for(let d of e1){
+                    
+                    temp+='<tr><td>'+d.hall+'</td><td>'+d.name+'</td><td>'+d.mob+'</td><td>'+d.dept+'</td><td>'+d.func+'</td><td>'+d.date+'</td><td>'+d.time+'</td></tr>';
+        
+                }
+                document.getElementById("res").innerHTML=temp;  
+            }
+            else{
+                document.getElementById("res").innerHTML="No record found";
+            }
+        })
+        
+        .catch(async(error)=>{
+          
+            res.innerHTML="ERROR"+error;    
+        })
+        })
+
+
+       
+        dispone.addEventListener('click',async(e)=>{
+ 
+            const name= String(document.querySelector("#name").value);
+              const dept= String(document.querySelector("#dept").value);
+            if(name==""||dept==""){
+                alert(" fields required");
+            }
+            else
+          {      
+              await  fetch('http://localhost:5500/get/'+name)
+                .then(async(e)=>{
+                    return e.json();
+                })
+                .then(async(e1)=>{
+                
+                    if(e1.length!=0){
+                    let temp='<tr><th>Hall name</th><th>name</th><th>Faculty mobile</th><th>dept</th><th>function</th><th>date</th><th>time</th></tr>';
+                    for(let d of e1){
+                        
+                        temp+='<tr><th>'+d.hall+'</th><th>'+d.name+'</th><th>'+d.mob+'</th><th>'+d.dept+'</th><th>'+d.func+'</th><th>'+d.date+'</th><th>'+d.time+'</th></tr>';
+            
+                    }
+                    document.getElementById("res").innerHTML=temp;  
+                }
+                else{
+                    document.getElementById("res").innerHTML="No record found";
+                }
+            })
+            
+                .catch(async()=>{
+                    console.log("ERROR");
+                    result.innerHTML="ERROR";
+                })
+            
+        }
+        })
+        
+</script>
+</body>
+</html>

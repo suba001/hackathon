@@ -1,0 +1,293 @@
+<html>
+  <head>
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <!-- <link href="css/proceed.css" rel="stylesheet" /> -->
+<title></title>
+<!-- cards start -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <style>
+      body {
+        background-color: lightcyan;
+      }
+      table{
+        border: 1px solid black;
+      }
+      .navbar-brand{
+        margin-left: 50px;
+    }
+.navbar-nav{
+    margin-left: 500px;
+}
+.footer{
+  
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 60px;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
+.ff{
+    margin-left: 300px;
+    margin-right: 300px;
+    
+}
+    </style>
+    <script></script>
+  </head>
+  <body>
+     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <img src="klogo.png" width="80" height="60" class="d-inline-block align-top" alt=""></a>
+            <a class="navbar-brand" href="#page-top">KONGU ENGINEERING COLLEGE</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">CC</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Auditorium</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<br><br><br><br><br>
+<div class="ff">
+    <form class="form-group" method="post" action="/" name="forms">
+        <div  >
+          <label for="hall">Choose a seminar hall : </label>
+          
+          <select name="hall" class="form-control"  id="n1">
+            <option value="ramanujam">ramanujam</option>
+          <option value="maharaja">maharaja</option>
+          <option value="sarvepalli radhakrishnan">sarvepalli radhakrishnan</option>
+          <option value="jawaharlal nehru">jawaharlal nehru</option>
+          <option value="homie j baba">homie j baba</option>
+          <option value="sir cv raman">sir cv raman</option>
+          <option value="mba seminar hall">mba seminar hall</option>
+          <option value="kalingarayan">kalingarayan</option>
+          <option value="convention center">convention center</option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Enter name of the faculty member : </label>
+          <input type="text" class="form-control" id="n2"  value="suba" required>
+        </div>
+
+        <div class="form-group">
+        <label> Enter the department : </label>  
+          <select name="dept" class="form-control"  id="n3">
+            <option value="it">it</option>
+                  <option value="cse">cse</option>
+                  <option value="mech">mech</option>
+                  <option value="ece">ece</option>
+                  <option value="eee">eee</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label >Enter the required seats : </label>
+            <input type="number" class="form-control" id="n11"  value="suba" >
+          </div>
+
+
+          <div class="form-group">
+            <label >Enter nature of the function : </label>
+            <select name="dept" class="form-control"  id="n4">
+                <option value="workshop">workshop</option>
+                <option value="guest lecture">guest lecture</option>
+                <option value="special case">special case</option> 
+                </select>
+          </div>
+
+
+          <div class="form-group">
+                <label>Enter date : </label>
+                <input class="form-control" type="date" id="n5"required value="19">
+             </div>   
+
+             <div class="form-group">
+                <label>Enter starting time : </label>
+                <input class="form-control" type="time" id="n6" required value="10">
+            </div>
+
+            <div class="form-group">
+                <label> Ending time : </label>
+                <input class="form-control" type="time" id="n10" required value="1">
+            </div>
+
+
+
+            <div class="form-group">
+                <label>Enter your passcode:(please remember it incase of cancelling the event)  </label>
+                <input type="password" class="form-control" id="n7"required>
+            </div>
+
+            <div class="form-group">
+                <label>Enter your confirm passcode:(please remember it incase of cancelling the event)  </label>
+                <input type="password" class="form-control" id="n8"required>
+                </div>
+        
+                <div class="form-group">
+                <label>Enter your mobile number : </label>
+                <input type="text" class="form-control" id="n9" required><br>
+           <table id="res">
+
+           </div>
+
+
+
+<center>        <input type="button" class="btn btn-primary" id="b1" value="submit"></center>
+
+      </form>
+
+    </div>
+
+
+
+
+
+    <br><br><br><br>
+    <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5"><br>Copyright &copy; KEC 2023</div></footer>
+    <script>
+
+      var flag;
+      
+const button=document.querySelector("#b1");
+
+button.addEventListener('click',()=>{
+
+ 
+    
+
+/*const num1=document.querySelector("#t1").value;
+const num2=document.querySelector("#t2").value*/
+        const hall=document.querySelector("#n1").value;
+        const name=document.querySelector("#n2").value;
+        const dept=document.querySelector("#n3").value;
+        const func=document.querySelector("#n4").value;
+        const date=document.querySelector("#n5").value;
+        const time=document.querySelector("#n6").value;
+      
+        const pass=document.querySelector("#n7").value;
+        const cp=document.querySelector("#n8").value;
+        const mob=document.querySelector("#n9").value;
+        const etime=document.querySelector("#n10").value;
+        const seats=document.querySelector("#n11").value;
+
+
+        if(mob.length!=10){
+            alert("length 10!!!");
+            return false;
+        }
+        if(pass!=cp)
+        {
+            alert("password and confirm password must be equal");
+            return false;
+        }
+        if(seats<100 && hall=="maharaja"&&func!="special case"||seats<100 && hall=="mba seminar hall"&&func!="special case"||seats<100 && hall=="convention center"&&func!="special case")
+        {
+          alert("selected hall is too large for your requirements");
+          return false;
+        }
+        if(seats>700 && hall!="convention center")
+        {
+          alert("convention center is suited for you!!!");
+          return false;
+        }
+
+
+if(hall==""||name==""||dept==""||seats==""||func==""||date==""||time==""||pass==""||cp==""||mob==""||etime=="")
+{
+    alert("compulsory");
+}
+else{
+
+  fetch('http://localhost:5500/getbydate/'+date)
+  .then(async(e)=>{
+      return e.json();
+  })
+  .then(async(e1)=>{
+  
+      if(e1.length!=0){
+      flag=1;
+      let temp='<tr><th>Hall name</th><th>name</th><th>Faculty mobile</th><th>dept</th><th>function</th><th>date</th><th>time</th></tr>';
+      for(let d of e1){
+                        
+                        temp+='<tr><th>'+d.hall+'</th><th>'+d.name+'</th><th>'+d.mob+'</th><th>'+d.dept+'</th><th>'+d.func+'</th><th>'+d.date+'</th><th>'+d.time+'</th></tr>';
+            
+                    }
+                    document.getElementById("res").innerHTML=temp;  
+
+      alert("already there is  a booking in this date,so pls select different slots");
+
+      return false;
+  }
+  else{
+    var d=JSON.stringify({hall:hall,name:name,dept:dept,seats:seats,func:func,date:date,time:time,pass:pass,cp:cp,mob:mob,etime:etime});
+  fetch("http://localhost:5500/insert",{
+  mode:'cors',
+  method:'POST',
+  headers:{
+      'Content-Type':'application/JSON'
+  },
+
+     body:d
+ 
+}).then(async(e)=>{
+    const data=await e.json();
+    console.log(data)
+    alert("Booking successfully completed");
+    window.location.href="form.html";
+})
+.catch((e)=>{
+    alert("eror"+e);
+})
+
+  }
+
+
+})
+  .catch(async()=>{
+      console.log("ERROR");
+      result.innerHTML="ERROR";
+  })
+
+
+  
+  
+
+   
+
+
+
+
+
+}
+})
+</script>
+
+
+    
+  </body>
+</html>
